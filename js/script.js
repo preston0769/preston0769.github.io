@@ -7,12 +7,12 @@ Version      	: 1.0
 (function($)
 {
 	"use strict";
-	
+
 	//========================= preloader ================
 	$(window).on('load', function() {
 		preloader();
 	})
-	
+
 	$(document).on('ready', function () {
 		$(".navbar-nav li a").on("click",function(event){
 			event.preventDefault();
@@ -25,7 +25,7 @@ Version      	: 1.0
 			   scrollTop: $(target).offset().top
 			}, 600, 'easeInOutExpo');
 		});
-		
+
 		// Projects Filter
 		$('.portfolio_items').mixItUp({
 			callbacks: {
@@ -34,13 +34,13 @@ Version      	: 1.0
 				}
 			}
 		});
-		
+
 		// Fancybox
 		$('a.fancybox').fancybox();
-		
+
 		// Scrolling
 		scroller();
-		
+
 		$('#navbar').each(function(){
 			$(this).jScrollPane({
 				showArrows: $(this).is('.arrow')
@@ -56,7 +56,7 @@ Version      	: 1.0
 				}
 			});
 		});
-		
+
 		// Sidebar Opener
 		$('#menu .mobile-menu-opener').on('click', function(e) {
 			e.preventDefault();
@@ -64,14 +64,14 @@ Version      	: 1.0
 			if (div.css('left') === '-220px') {
 				$('#menu').animate({
 					left: '0px'
-				}); 
+				});
 			} else {
 				$('#menu').animate({
 					left: '-220px'
 				});
 			}
 		});
-		
+
 		$('#navbar li a').on('click', function(e) {
 			e.preventDefault();
 			if($(window).width() < 767){
@@ -85,7 +85,7 @@ Version      	: 1.0
 				});
 			}
 		});
-		
+
 		$('.content-wrapper').on('click', function(e) {
 			//e.preventDefault();
 			if($(window).width() < 767){
@@ -99,7 +99,7 @@ Version      	: 1.0
 				});
 			}
 		});
-		
+
 		// Animation
 		 if($('.wow').length){
 			var wow = new WOW(
@@ -113,9 +113,9 @@ Version      	: 1.0
 			);
 			wow.init();
 		}
-		
+
 		//Contact Map
-		var mapInfo = {"lat":"23.800446", "lon":"90.349832"}; //Change a map coordinate here!
+		var mapInfo = {"lat":"-37.813808", "lon":"144.960000"}; //Change a map coordinate here!
 		try {
 			$('.map').gmap3({
 				action: 'addMarker',
@@ -130,17 +130,17 @@ Version      	: 1.0
 		} catch(err) {
 
 		}
-		
-		// Counter Up 
+
+		// Counter Up
 		$('.counter').counterUp({
 			delay: 10,
 			time: 2000
 		});
-		
+
 	});
-	
+
 	$(window).on('scroll', function() {
-		// Progressbar 
+		// Progressbar
 		$(".single-progressbar").each(function() {
 			var base = $(this);
 			var windowHeight = $(window).height();
@@ -167,19 +167,19 @@ Version      	: 1.0
 					});
 				}
 			}
-		});	
-		
+		});
+
 	});
-	
-	//============= Preload ============ 
+
+	//============= Preload ============
 	function preloader(){
 		$(".preloaderimg").fadeOut();
 		$(".preloader").delay(200).fadeOut("slow").delay(200, function(){
 			$(this).remove();
 		});
 	}
-	
-	// Scrolling 
+
+	// Scrolling
 	function scroller(){
 		if($(window).width() > 767){
 			$('section').each(function(){
@@ -200,5 +200,5 @@ Version      	: 1.0
 			});
 		}
 	}
-	
-})(jQuery);	
+
+})(jQuery);
